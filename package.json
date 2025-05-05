@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "skinview3d": "^3.3.0",
+    "three": "0.156.1",
+    "vitepress-markdown-timeline": "^1.2.2"
+  }
+}

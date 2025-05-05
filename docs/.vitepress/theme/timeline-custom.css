@@ -1,0 +1,122 @@
+/**
+ * vitepress-markdown-timeline 插件自定义样式
+ * 使其与网站主题颜色保持一致
+ */
+
+:root {
+    /* 时间线主色调 - 使用网站的主题色 */
+    --timeline-color: var(--vp-c-brand-3);
+    /* 青绿色 #16d9c7 */
+    --timeline-title-color: var(--vp-c-brand-1);
+    /* 深青绿色 #0a8c7f */
+
+    /* 时间线样式自定义 */
+    --timeline-line-color: var(--vp-c-brand-3);
+    /* 线条颜色 */
+    --timeline-dot-color: var(--vp-c-brand-3);
+    /* 圆点颜色 */
+    --timeline-dot-border-color: var(--vp-c-brand-soft);
+    /* 圆点边框颜色 */
+    --timeline-dot-size: 16px;
+    /* 圆点大小 */
+
+    /* 时间标题样式 */
+    --timeline-time-font-weight: 600;
+    --timeline-time-color: var(--vp-c-brand-1);
+    --timeline-time-font-size: 1rem;
+
+    /* 内容区域样式 */
+    --timeline-item-bg: var(--vp-c-bg-soft);
+    --timeline-item-border: 1px solid rgba(22, 217, 199, 0.2);
+    --timeline-item-border-radius: 8px;
+    --timeline-item-padding: 16px;
+    --timeline-item-margin: 16px 0;
+    --timeline-item-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 时间线容器样式增强 */
+.timeline-wrapper {
+    position: relative;
+    padding: 8px 0;
+    margin: 24px 0;
+}
+
+/* 时间线垂直线条样式 */
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 16px;
+    height: 100%;
+    width: 2px;
+    background: var(--timeline-line-color);
+    opacity: 0.6;
+}
+
+/* 时间点样式增强 */
+.timeline-item .timeline-dot {
+    position: absolute;
+    left: 16px;
+    top: 24px;
+    width: var(--timeline-dot-size);
+    height: var(--timeline-dot-size);
+    border-radius: 50%;
+    background-color: var(--timeline-dot-color);
+    border: 2px solid var(--timeline-dot-border-color);
+    box-shadow: 0 0 8px rgba(22, 217, 199, 0.4);
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+/* 时间项悬停效果 */
+.timeline-item:hover .timeline-dot {
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 12px rgba(22, 217, 199, 0.6);
+}
+
+/* 时间标题样式增强 */
+.timeline-item .timeline-item-title {
+    font-weight: var(--timeline-time-font-weight);
+    color: var(--timeline-time-color);
+    font-size: var(--timeline-time-font-size);
+    margin-bottom: 8px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* 内容区域样式增强 */
+.timeline-item-content {
+    background-color: var(--timeline-item-bg);
+    border: var(--timeline-item-border);
+    border-radius: var(--timeline-item-border-radius);
+    padding: var(--timeline-item-padding);
+    margin: var(--timeline-item-margin);
+    box-shadow: var(--timeline-item-box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* 内容区域悬停效果 */
+.timeline-item:hover .timeline-item-content {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--vp-c-brand-3);
+}
+
+/* 暗色模式适配 */
+.dark .timeline-item-content {
+    background-color: rgba(30, 30, 32, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* 最后一个时间点特殊样式 */
+.timeline-item:last-child .timeline-dot {
+    background-color: var(--vp-c-yellow-3);
+    /* 使用第二主题色 */
+    box-shadow: 0 0 8px rgba(255, 199, 0, 0.4);
+}
+
+.timeline-item:last-child:hover .timeline-dot {
+    box-shadow: 0 0 12px rgba(255, 199, 0, 0.6);
+}
