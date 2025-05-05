@@ -45,9 +45,3 @@ outline: deep
 | `/sethome` | 设置家的位置 |
 | `/tpa <玩家名>` | 请求传送到其他玩家 |
 | `/msg <玩家名> <消息>` | 向指定玩家发送私信 |
-
-## 相关链接
-
-- [新手指南](/guide/getting-started.md)
-- [玩法攻略](/gameplay/index.md)
-- [常见问题](/faq/index.md)
