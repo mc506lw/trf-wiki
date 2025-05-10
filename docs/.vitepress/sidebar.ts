@@ -14,6 +14,7 @@ export const sidebar = {
                     text: '加入服务器',
                     collapsed: true,
                     items: [
+                        { text: '请选择你的加入方式', link: '/guide/join/' },
                         { text: '正版JAVA玩家加入', link: '/guide/join/official' },
                         { text: '离线JAVA玩家加入', link: '/guide/join/offline' },
                         { text: '基岩版玩家加入', link: '/guide/join/bedrock' }
@@ -43,7 +44,8 @@ export const sidebar = {
                         { text: '未来计划', link: '/guide/updates/roadmap' }
                     ]
                 },
-                { text: '管理团队', link: '/guide/other/admin' }
+                { text: '管理团队', link: '/guide/other/admin' },
+                { text: '用户协议及隐私政策', link: '/guide/other/terms' }
             ]
         }
     ]

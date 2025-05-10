@@ -89,7 +89,7 @@ export default defineConfig({
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/your-org/your-repo/edit/main/docs/:path',
+      pattern: 'https://github.com/mc506lw/trf-wiki/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
 

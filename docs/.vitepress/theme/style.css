@@ -29,7 +29,56 @@
  */
 
 :root {
-  /* 基础颜色变量 */
+  /* MSCPO标识样式 */
+.mscpo-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(var(--vp-c-green-2), 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--vp-c-green-2), 0.3);
+  margin: 2rem 0;
+  transition: all 0.3s ease;
+}
+
+.mscpo-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(var(--vp-c-green-2), 0.15);
+}
+
+.mscpo-badge .logo {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 2px 4px rgba(var(--vp-c-green-2), 0.3));
+}
+
+.mscpo-badge h3 {
+  color: var(--vp-c-green-1);
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.mscpo-badge p {
+  color: var(--vp-c-text-2);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .mscpo-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .mscpo-badge .logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* 基础颜色变量 */
   --vp-c-green-1: #0a8c7f;
   --vp-c-green-2: #10b3a3;
   --vp-c-green-3: #16d9c7;

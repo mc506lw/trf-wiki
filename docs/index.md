@@ -4,6 +4,9 @@ layout: home
 
 hero:
   name: "屯人服 Wiki"
+
+
+
   text: "Minecraft 生存服务器知识库"
   tagline: "探索、建造、生存、交流 —— 尽在屯人服"
   image:
@@ -33,13 +36,7 @@ features:
 ---
 
 
-<!-- Logo互动效果 -->
-<div class="logo-interactive-container">
-  <div class="logo-interactive" id="interactive-logo">
-    <img src="/logo.svg" alt="屯人服Logo" />
-    <div class="logo-particles"></div>
-  </div>
-</div>
+
 
 <div class="custom-home-section">
   <h2>最新公告</h2>
@@ -59,6 +56,8 @@ features:
   </div>
 </div>
 
+<MscpoBadge />
+
 <!-- 流体动画背景 -->
 <div class="fluid-background">
   <canvas id="fluid-canvas"></canvas>
@@ -66,11 +65,6 @@ features:
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-
-// Logo互动状态
-const isLogoAnimating = ref(false)
-const isLogoClicking = ref(false)
-const isLogoHovering = ref(false) // 新增：跟踪鼠标是否悬停在Logo上
 
 onMounted(() => {
   // 流体动画初始化
@@ -133,101 +127,7 @@ onMounted(() => {
   resizeCanvas()
   createFluidAnimation()
   
-  // Logo互动效果初始化
-  const logo = document.getElementById('interactive-logo')
-  const logoParticles = document.querySelector('.logo-particles')
-  
-  if (logo && logoParticles) {
-    // 创建粒子
-    function createParticles() {
-      logoParticles.innerHTML = ''
-      const particleCount = 20
-      
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div')
-        particle.className = 'particle'
-        particle.style.setProperty('--delay', `${Math.random() * 2}s`)
-        particle.style.setProperty('--size', `${Math.random() * 8 + 2}px`)
-        logoParticles.appendChild(particle)
-      }
-    }
-    
-    // 添加悬停效果
-    logo.addEventListener('mouseenter', () => {
-      isLogoHovering.value = true // 设置悬停状态为true
-      
-      // 只有在没有点击动画进行中时才应用悬停效果
-      if (!isLogoClicking.value) {
-        isLogoAnimating.value = true
-        logo.classList.add('logo-hover')
-        createParticles()
-      }
-    })
-    
-    logo.addEventListener('mouseleave', () => {
-      isLogoHovering.value = false // 设置悬停状态为false
-      isLogoAnimating.value = false
-      logo.classList.remove('logo-hover')
-    })
-    
-    // 添加点击效果，防止多次点击导致的鬼畜
-    logo.addEventListener('click', () => {
-      if (isLogoClicking.value) return // 如果正在执行点击动画，则忽略新的点击
-      
-      isLogoClicking.value = true
-      isLogoAnimating.value = true // 设置动画状态为true
-      
-      // 移除悬停效果，避免动画冲突
-      logo.classList.remove('logo-hover')
-      
-      // 移除之前可能存在的点击动画类
-      logo.classList.remove('logo-click')
-      
-      // 清除之前的所有爆发粒子
-      const oldBursts = logo.querySelectorAll('.logo-burst')
-      oldBursts.forEach(burst => burst.remove())
-      
-      // 添加新的点击动画
-      // 使用setTimeout确保DOM有时间处理类的移除
-      setTimeout(() => {
-        logo.classList.add('logo-click')
-        
-        // 创建更多粒子用于点击效果
-        const burstCount = 15
-        for (let i = 0; i < burstCount; i++) {
-          const burst = document.createElement('div')
-          burst.className = 'logo-burst'
-          burst.style.setProperty('--angle', `${Math.random() * 360}deg`)
-          burst.style.setProperty('--distance', `${Math.random() * 100 + 50}px`)
-          burst.style.setProperty('--size', `${Math.random() * 10 + 5}px`)
-          burst.style.setProperty('--color', Math.random() > 0.5 ? 'var(--vp-c-brand-1)' : 'var(--vp-c-yellow-1)')
-          logo.appendChild(burst)
-          
-          // 移除爆发粒子
-          setTimeout(() => {
-            burst.remove()
-          }, 1000)
-        }
-        
-        // 动画结束后重置状态并检查是否需要应用悬停效果
-        setTimeout(() => {
-          logo.classList.remove('logo-click')
-          isLogoClicking.value = false
-          
-          // 如果鼠标仍然悬停在Logo上，应用悬停效果
-          if (isLogoHovering.value) {
-            logo.classList.add('logo-hover')
-            createParticles()
-          } else {
-            isLogoAnimating.value = false
-          }
-        }, 800) // 略长于动画时间，确保动画完全结束
-      }, 10)
-    })
-    
-    // 初始创建粒子
-    createParticles()
-  }
+
   
   // 清理函数
   onUnmounted(() => {
@@ -236,12 +136,7 @@ onMounted(() => {
       cancelAnimationFrame(animationFrameId)
     }
     
-    // 清理Logo事件监听器
-    if (logo) {
-      logo.removeEventListener('mouseenter', () => {})
-      logo.removeEventListener('mouseleave', () => {})
-      logo.removeEventListener('click', () => {})
-    }
+
   })
 })
 </script>
@@ -264,115 +159,38 @@ onMounted(() => {
   opacity: 0.8;
 }
 
-/* Logo互动样式 */
-.logo-interactive-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 10;
-}
 
-.logo-interactive {
-  position: absolute;
-  top: -37rem;
-  right: 10%;
-  width: 256px;
-  height: 256px;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
 
-.logo-interactive img {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 8px rgba(22, 217, 199, 0.3));
-  transition: filter 0.5s, transform 0.5s;
+/* 新增主题层叠顺序 */
+:root {
+  --vp-z-index-nav: 999;
+  --vp-z-index-sidebar: 998;
 }
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-.logo-hover {
-  transform: scale(1.1) rotate(5deg);
-}
 
-.logo-hover img {
-  filter: drop-shadow(0 0 15px rgba(22, 217, 199, 0.6));
-}
 
-.logo-click {
-  animation: logo-pulse 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
 
-@keyframes logo-pulse {
-  0% { transform: scale(1); }
-  30% { transform: scale(0.9) rotate(-5deg); }
-  60% { transform: scale(1.1) rotate(5deg); }
-  100% { transform: scale(1); }
-}
 
-.logo-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
 
-.particle {
-  position: absolute;
-  background-color: var(--vp-c-brand-1);
-  border-radius: 50%;
-  opacity: 0;
-  animation: float 3s ease-in-out infinite;
-  animation-delay: var(--delay);
-  width: var(--size);
-  height: var(--size);
-}
 
-@keyframes float {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0);
+/* 移动端适配样式 */
+@media (max-width: 956px) {
+  .custom-home-section {
+    padding: 1.5rem 1rem;
   }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(calc(Math.random() * 80px - 40px), calc(Math.random() * -100px - 20px));
-  }
-}
 
-.logo-burst {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: var(--size);
-  height: var(--size);
-  background-color: var(--color);
-  border-radius: 50%;
-  transform-origin: center;
-  animation: burst 1s cubic-bezier(0.17, 0.67, 0.83, 0.67) forwards;
-  pointer-events: none;
-}
+  .announcement-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
-@keyframes burst {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+  .announcement-item h3 {
+    font-size: 1.1rem;
   }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) translateX(calc(cos(var(--angle)) * var(--distance))) translateY(calc(sin(var(--angle)) * var(--distance))) scale(1) rotate(360deg);
+
+  .announcement-item p {
+    font-size: 0.9rem;
   }
 }
 
@@ -481,18 +299,58 @@ onMounted(() => {
   transition: color 0.3s ease;
 }
 
-.VPFeature .icon {
-  transition: transform 0.5s ease;
+/* MSCPO悬浮徽章 */
+.mscpo-badge {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(22, 217, 199, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.VPFeature:hover .icon {
-  transform: scale(1.2) rotate(5deg);
+.mscpo-badge:hover {
+  transform: translateY(-3px);
+  background: rgba(22, 217, 199, 0.15);
 }
 
-/* 修复VitePress默认Logo位置，避免与自定义Logo冲突 */
-.VPHero .image {
-  opacity: 0;
-  pointer-events: none;
+.mscpo-badge .logo {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.mscpo-badge .content h3 {
+  font-size: 0.9rem;
+  color: var(--vp-c-brand-1);
+  margin: 0;
+}
+
+.mscpo-badge .content p {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 768px) {
+  .mscpo-badge {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+  }
+  
+  .mscpo-badge .logo {
+    width: 32px;
+    height: 32px;
+  }
 }
 </style>
 

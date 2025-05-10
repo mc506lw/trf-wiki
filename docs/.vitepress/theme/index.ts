@@ -11,6 +11,7 @@ import './timeline-custom.css'
 
 // 导入自定义组件
 import CommandExplorer from './components/CommandExplorer.vue'
+import MscpoBadge from './components/MscpoBadge.vue'
 
 // 自定义主题配置
 export const themeConfig = {
@@ -76,5 +77,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // 注册全局组件
     app.component('CommandExplorer', CommandExplorer)
+    app.component('MscpoBadge', MscpoBadge)
   }
 } satisfies Theme
