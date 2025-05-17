@@ -37,7 +37,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   background: linear-gradient(135deg, var(--vp-c-brand-1) 20%, var(--vp-c-brand-2) 100%);
-  color: white;
+  color: black;
   text-decoration: none;
   transition: var(--qq-card-transition);
   box-shadow: var(--qq-card-shadow);
@@ -46,6 +46,7 @@
 
 .qq-group-card {
   background: linear-gradient(135deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3) 100%);
+  color: black;
 }
 
 .card-content {
@@ -65,7 +66,8 @@
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.15);
+  color: black;
 }
 
 .text-content p {
@@ -73,6 +75,7 @@
   opacity: 0.95;
   font-size: 0.95rem;
   font-weight: 500;
+  color: black;
 }
 
 .arrow {

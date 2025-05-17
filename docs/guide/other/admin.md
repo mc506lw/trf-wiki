@@ -99,8 +99,8 @@ onMounted(() => {
 <style>
 :root {
   --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
-  --role-tag-bg: rgba(255, 255, 255, 0.18);
-  --role-tag-hover: var(--vp-c-brand-2);
+  --role-tag-bg: rgba(255, 215, 0, 0.7);
+  --role-tag-hover: rgba(255, 215, 0, 0.9);
   --admin-name-color: var(--vp-c-brand-1);
   --control-btn-hover: var(--vp-c-brand-2);
 }
