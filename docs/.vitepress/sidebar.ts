@@ -15,8 +15,7 @@ export const sidebar = {
                     collapsed: true,
                     items: [
                         { text: '请选择你的加入方式', link: '/guide/join/' },
-                        { text: '正版JAVA玩家加入', link: '/guide/join/official' },
-                        { text: '离线JAVA玩家加入', link: '/guide/join/offline' },
+                        { text: 'JAVA玩家加入', link: '/guide/join/official' },
                         { text: '基岩版玩家加入', link: '/guide/join/bedrock' }
                     ]
                 }
