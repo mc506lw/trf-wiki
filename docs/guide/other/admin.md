@@ -23,6 +23,11 @@ const adminList = [
     name: 'レミリア',
     id: 'remlia_',
     roles: ['插件开发', '配置文件编辑']
+  },
+  {
+    name: 'Starry-cbz',
+    id: 'Starry-cbz',
+    roles: ['文档撰写', '配置文件编辑']
   }
 ];
 
@@ -92,6 +97,28 @@ onMounted(() => {
 </div>
 
 <style>
+:root {
+  --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%);
+  --role-tag-hover: var(--vp-c-brand-lightest);
+}
+
+@media (max-width: 768px) {
+  .admin-viewer {
+    padding: 1rem;
+    max-width: 90%;
+  }
+  
+  .skin-viewer {
+    width: 180px !important;
+    height: 250px !important;
+  }
+  
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    margin: 0 0.4rem;
+  }
+}
 .admin-showcase {
   display: flex;
   justify-content: center;
@@ -102,12 +129,13 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(22, 217, 199, 0.1);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  background: linear-gradient(145deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--vp-shadow-3);
+  max-width: 560px;
   width: 100%;
+  border: 1px solid var(--vp-c-brand-lightest);
 }
 
 .admin-controls {
@@ -123,19 +151,20 @@ onMounted(() => {
 }
 
 .control-btn {
-  background: #10b3a3;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 1rem;
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+  border: 1px solid var(--vp-button-brand-border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
   cursor: pointer;
-  margin: 0 0.5rem;
+  margin: 0 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
+  transition: all 0.25s ease;
+  box-shadow: var(--vp-shadow-1);
 }
 
 .control-btn:hover {
@@ -162,11 +191,19 @@ onMounted(() => {
 }
 
 .role-tag {
-  background: #ffc700;
-  color: #333;
-  padding: 0.2rem 0.6rem;
-  border-radius: 16px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  background: rgba(255,255,255,0.15);
+  color: var(--vp-c-text-1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: 1px solid var(--vp-c-brand-lightest);
+}
+
+.role-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--vp-shadow-2);
+  background: var(--vp-c-brand-lightest);
 }
 </style>

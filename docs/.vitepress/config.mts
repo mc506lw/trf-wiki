@@ -74,8 +74,8 @@ export default defineConfig({
 
     // 页脚配置
     footer: {
-      message: '基于 MIT 许可发布',
-      copyright: 'Copyright © 2023-present TRF Wiki 团队'
+      message: '基于 GPL-3.0 license 许可发布',
+      copyright: 'Copyright © 2025-present TRF Wiki 团队'
     },
 
     // 文档更新时间显示

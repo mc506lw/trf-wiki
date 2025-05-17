@@ -20,8 +20,9 @@
 .qq-group-container {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  margin: 2rem 0;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
 }
 
 .qq-channel-card,
@@ -30,13 +31,13 @@
   border-radius: 12px;
   padding: 1.5rem;
   background: linear-gradient(135deg, var(--vp-c-brand-1) 20%, var(--vp-c-brand-2) 100%);
-  color: white;
+  color: var(--vp-c-text-1);
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .qq-group-card {
-  background: linear-gradient(135deg, var(--vp-c-green-1) 20%, var(--vp-c-green-2) 100%);
+  background: linear-gradient(135deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3) 100%);
 }
 
 .card-content {
@@ -71,7 +72,7 @@
 .qq-channel-card:hover,
 .qq-group-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--vp-c-brand-2);
 }
 </style>
 
