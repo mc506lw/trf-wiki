@@ -43,15 +43,9 @@ features:
   <div class="announcement-list">
     <div class="announcement-item">
       <span class="date">2023-12-15</span>
-      <h3>服务器1.20.4版本更新公告</h3>
-      <p>我们已经完成了服务器核心的升级，现在支持Minecraft 1.20.4版本...</p>
+      <h3>✨【重磅消息！屯人服与Alazeprt合并为「屯人服」】✨</h3>
+      <p>原「屯人服」与「Alazeprt」今日正式合并！全新「屯人服」将全面升级玩法机制与主城体验...</p>
       <a href="/guide/updates/">阅读更多</a>
-    </div>
-    <div class="announcement-item">
-      <span class="date">2023-12-01</span>
-      <h3>冬季活动预告</h3>
-      <p>即将到来的冬季活动将带来丰富的游戏内容和奖励，敬请期待...</p>
-      <a href="/guide/community/events">阅读更多</a>
     </div>
   </div>
 </div>
