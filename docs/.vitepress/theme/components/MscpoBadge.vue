@@ -5,7 +5,7 @@
       <h3>MSCPO认证成员服务器</h3>
       <p>我们已通过MSCPO高品质公益服务器认证</p>
     </div>
-    <a class="details-btn" href="https://www.mscpo.top/" target="_blank">了解详情 →</a>
+    <a class="details-btn" href="https://mscpo.crashvibe.cn/details/55" target="_blank">了解详情 →</a>
   </div>
 </template>
 
