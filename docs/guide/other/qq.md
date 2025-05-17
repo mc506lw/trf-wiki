@@ -4,7 +4,7 @@
 
 <div class="qq-group-container">
 
-  <a href="https://qm.qq.com/q/f8RTISPDHi" class="qq-group-card">
+  <a href="https://qm.qq.com/q/6rVnCwgEmc" class="qq-group-card">
     <div class="card-content">
       <span class="icon">🎮</span>
       <div class="text-content">
@@ -36,23 +36,37 @@
   display: block;
   border-radius: 12px;
   padding: 1.5rem;
-  background: linear-gradient(135deg, var(--vp-c-brand-1) 20%, var(--vp-c-brand-2) 100%);
-  color: black;
+  background: linear-gradient(135deg, #2E8B57 20%, #3CB371 100%);
   text-decoration: none;
   transition: var(--qq-card-transition);
   box-shadow: var(--qq-card-shadow);
-  border: 1px solid var(--vp-c-brand-3);
+  border: 1px solid #8FBC8F;
+  backdrop-filter: saturate(180%) blur(16px);
+  position: relative;
+  overflow: hidden;
 }
 
-.qq-group-card {
-  background: linear-gradient(135deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-3) 100%);
-  color: black;
+/* 黑暗模式适配 */
+.dark .qq-group-card {
+  background: linear-gradient(135deg, #2E8B57 20%, #3CB371 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.dark .qq-group-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.03);
+  z-index: -1;
 }
 
 .card-content {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  color: white;
 }
 
 .icon {
@@ -66,8 +80,7 @@
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.15);
-  color: black;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .text-content p {
@@ -75,7 +88,6 @@
   opacity: 0.95;
   font-size: 0.95rem;
   font-weight: 500;
-  color: black;
 }
 
 .arrow {
@@ -88,18 +100,29 @@
 .qq-channel-card:hover,
 .qq-group-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--qq-card-shadow-hover);
 }
 
 .qq-group-card:hover .icon,
 .qq-channel-card:hover .icon {
   transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
+
+.dark .qq-group-card:hover {
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
 
 .qq-group-card:hover .arrow,
 .qq-channel-card:hover .arrow {
   transform: translateX(3px);
   opacity: 1;
+}
+
+/* 增强交互效果 */
+.qq-group-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 移动端适配 */

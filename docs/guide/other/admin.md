@@ -99,8 +99,8 @@ onMounted(() => {
 <style>
 :root {
   --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
-  --role-tag-bg: rgba(255, 215, 0, 0.7);
-  --role-tag-hover: rgba(255, 215, 0, 0.9);
+  --role-tag-bg: rgba(255, 255, 255, 0.18);
+  --role-tag-hover: var(--vp-c-brand-2);
   --admin-name-color: var(--vp-c-brand-1);
   --control-btn-hover: var(--vp-c-brand-2);
 }
@@ -235,5 +235,48 @@ onMounted(() => {
   box-shadow: var(--vp-shadow-3);
   background: var(--role-tag-hover);
   color: white;
+}
+
+.dark .admin-viewer {
+  background: linear-gradient(145deg, var(--vp-c-brand-4) 0%, var(--vp-c-brand-5) 100%); /* 使用更深的品牌色 */
+  border-color: var(--vp-c-brand-4);
+}
+
+.dark .admin-info h2 {
+  color: var(--vp-c-brand-2); /* 使用较亮的品牌色 */
+}
+
+.dark .admin-roles .role-tag {
+  background: rgba(255, 255, 255, 0.1); /* 更柔和的背景 */
+  color: var(--vp-c-text-2); /* 调整文字颜色 */
+  border-color: var(--vp-c-brand-4);
+}
+
+.dark .role-tag:hover {
+  background: var(--vp-c-brand-3); /* 悬停背景 */
+  color: white;
+}
+
+.dark .control-btn {
+  background: var(--vp-button-brand-bg-dark); /* 使用黑暗模式按钮背景 */
+  color: var(--vp-button-brand-text-dark); /* 使用黑暗模式按钮文字颜色 */
+  border-color: var(--vp-button-brand-border-dark); /* 使用黑暗模式按钮边框颜色 */
+}
+
+.dark .control-btn:hover {
+  background: var(--vp-c-brand-3); /* 悬停背景 */
+  transform: translateY(-2px);
+  box-shadow: var(--vp-shadow-2);
+}
+
+/* 定义黑暗模式下的品牌色变量，假设存在 */
+/* 如果全局已定义，这些可以移除 */
+.dark {
+  --vp-c-brand-4: #0a8c7f; /* 假设的更深的品牌色 */
+  --vp-c-brand-5: #076b61; /* 假设的更深的品牌色 */
+  --vp-c-text-2: rgba(235, 235, 235, 0.6); /* 假设的黑暗模式文字颜色 */
+  --vp-button-brand-bg-dark: var(--vp-c-brand-3); /* 假设的黑暗模式按钮背景 */
+  --vp-button-brand-text-dark: white; /* 假设的黑暗模式按钮文字颜色 */
+  --vp-button-brand-border-dark: var(--vp-c-brand-2); /* 假设的黑暗模式按钮边框颜色 */
 }
 </style>

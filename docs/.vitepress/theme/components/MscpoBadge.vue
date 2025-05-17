@@ -27,9 +27,18 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.dark .mscpo-badge {
+  background: rgba(22, 217, 197, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 .mscpo-badge:hover {
   transform: translateY(-3px);
   background: rgba(22, 217, 199, 0.15);
+}
+
+.dark .mscpo-badge:hover {
+  background: rgba(22, 217, 199, 0.25);
 }
 
 .logo {
@@ -62,6 +71,12 @@
   backdrop-filter: blur(4px);
   margin-left: 15px;
   text-decoration: none;
+}
+
+.dark .details-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(22, 217, 199, 0.2), rgba(22, 217, 199, 0.1));
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {

@@ -63,74 +63,104 @@ import { onMounted, onUnmounted, ref } from 'vue'
 onMounted(() => {
   // 流体动画初始化
   const canvas = document.getElementById('fluid-canvas')
+  if (!canvas) return; // 如果canvas不存在，则不执行后续操作
   const ctx = canvas.getContext('2d')
   let animationFrameId
-  
+  let observer
+
   // 设置画布大小
   function resizeCanvas() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
   }
-  
+
   // 创建流体动画
   function createFluidAnimation() {
     const width = canvas.width
     const height = canvas.height
-    
+    const isDarkMode = document.documentElement.classList.contains('dark')
+
     // 波浪参数
-    const waves = [
+    const lightModeWaves = [
       { amplitude: 25, frequency: 0.02, speed: 0.01, color: 'rgba(22, 217, 199, 0.2)', phase: 0 },
       { amplitude: 20, frequency: 0.03, speed: 0.015, color: 'rgba(22, 217, 199, 0.15)', phase: 2 },
       { amplitude: 15, frequency: 0.01, speed: 0.02, color: 'rgba(255, 199, 0, 0.1)', phase: 4 }
     ]
-    
+
+    const darkModeWaves = [
+      { amplitude: 25, frequency: 0.02, speed: 0.01, color: 'rgba(0, 122, 204, 0.2)', phase: 0 }, // 蓝色系
+      { amplitude: 20, frequency: 0.03, speed: 0.015, color: 'rgba(0, 100, 180, 0.15)', phase: 2 }, // 深一点的蓝色
+      { amplitude: 15, frequency: 0.01, speed: 0.02, color: 'rgba(0, 80, 150, 0.1)', phase: 4 }    // 更深一点的蓝色
+    ]
+
+    const waves = isDarkMode ? darkModeWaves : lightModeWaves;
+
     function drawWave(wave) {
       ctx.beginPath()
       ctx.moveTo(0, height / 2)
-      
+
       for (let x = 0; x < width; x++) {
         const y = height / 2 + Math.sin(x * wave.frequency + wave.phase) * wave.amplitude
         ctx.lineTo(x, y)
       }
-      
+
       ctx.lineTo(width, height)
       ctx.lineTo(0, height)
       ctx.closePath()
-      
+
       ctx.fillStyle = wave.color
       ctx.fill()
-      
+
       // 更新相位
       wave.phase += wave.speed
     }
-    
+
     function animate() {
       ctx.clearRect(0, 0, width, height)
-      
+
       // 绘制每个波浪
       waves.forEach(drawWave)
-      
+
       animationFrameId = requestAnimationFrame(animate)
     }
-    
+
+    // 如果已有动画帧，先取消
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+    }
     animate()
   }
-  
-  // 初始化流体动画
-  window.addEventListener('resize', resizeCanvas)
-  resizeCanvas()
-  createFluidAnimation()
-  
 
-  
+  // 初始化并监听主题变化
+  function initializeAndWatchTheme() {
+    resizeCanvas()
+    createFluidAnimation()
+
+    // 监听主题变化
+    observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          // 主题变化时重新创建动画
+          createFluidAnimation()
+        }
+      }
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+  }
+
+  window.addEventListener('resize', resizeCanvas)
+  initializeAndWatchTheme()
+
   // 清理函数
   onUnmounted(() => {
     window.removeEventListener('resize', resizeCanvas)
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId)
     }
-    
-
+    if (observer) {
+      observer.disconnect()
+    }
   })
 })
 </script>

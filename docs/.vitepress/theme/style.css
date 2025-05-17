@@ -203,3 +203,12 @@
   --vp-c-brand-dark: var(--vp-c-brand-1);
   --vp-c-brand-darker: var(--vp-c-brand-1);
 }
+
+/* 图标悬浮动效 */
+.VPImage.image-src {
+  transition: all 0.3s ease;
+}
+
+.VPImage.image-src:hover {
+  filter: brightness(1.1);
+}

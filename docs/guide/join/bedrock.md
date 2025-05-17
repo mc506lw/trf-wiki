@@ -6,20 +6,76 @@ outline: deep
 
 # 新手入门指南
 
-欢迎来到屯人服！本指南将帮助你从零开始，快速融入我们的Minecraft世界。无论你是Minecraft新手还是老玩家，这里都有你需要的全部入门信息。
+这将会让你快速连接并进入我们的 Minecraft 服务器。
+
+::: tip
+本服务器无需使用正版账号！但基岩版玩家必须登录微软账号才能进入服务器。
+:::
+
+## 加入QQ群并绑定ID
+
+在连接服务器之前，**你需要先加入我们的QQ群并绑定你的Minecraft ID**，否则将无法正常进入服务器。
+
+::: details 没有微软账号？点击这里注册
+1. 访问 [Microsoft 账号注册页面](https://account.microsoft.com/account)
+2. 点击"创建Microsoft账号"
+3. 按照页面提示填写信息并完成注册
+4. 打开Minecraft基岩版，点击"登录Microsoft账号"
+5. 使用刚刚注册的账号登录
+:::
+
+### 步骤如下：
+
+1. 加入[官方QQ群](https://qm.qq.com/q/6rVnCwgEmc)
+2. 进入群后，在群中发送以下指令来绑定你的 Minecraft ID：
+   ```
+   /绑定 你的MinecraftID
+   ```
+   > 示例：`/绑定 Steve001`  
+   > 注意：基岩版玩家的ID在游戏中会自动添加"."前缀，但绑定时请不要输入这个"."
+
+3. 等待系统确认绑定成功。绑定后，请确保使用该 Minecraft 账号登录游戏。
 
 ## 连接服务器
 
 ### 准备工作
 
-1. **确认游戏版本**：服务器当前运行版本为**基岩版1.21.4**
+::: tip 下载我的世界基岩版
+还没有安装我的世界基岩版？点击下方链接下载：
+:::
 
+<a href="https://mcapks.net/" target="_blank" class="download-card" style="text-decoration: none">
+  <div style="padding: 16px; border: 1px solid var(--vp-c-divider); border-radius: 8px; display: flex; align-items: center; gap: 12px; position: relative; overflow: hidden">
+    <div style="flex: 1; position: relative; z-index: 1">
+      <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 4px">下载 Minecraft 基岩版</div>
+      <div style="color: var(--vp-c-text-2)">安卓基岩版非官网下载链接</div>
+    </div>
+    <div style="position: relative; z-index: 1">→</div>
+    <div style="position: absolute; left: 0; top: 0; width: 0; height: 100%; background: var(--vp-c-brand-3); opacity: 0.1; transition: width 0.3s ease"></div>
+  </div>
+</a>
+
+<style>
+.download-card:hover div:last-child {
+  width: 100%;
+}
+</style>
+
+1. **确认游戏版本**：服务器当前运行版本为**基岩版最新版**
+2. **确保已登录微软账号**：基岩版玩家必须登录微软账号才能进入服务器
 ### 连接步骤
 
 #### 基岩版玩家
 
-1. 启动Minecraft基岩版，确保版本为1.21.4
+1. 启动Minecraft基岩版，确保版本为最新版并已登录微软账号
 2. 点击"游戏"→"服务器"→"添加服务器"
 3. 服务器名称填写"屯人服"（或任何你喜欢的名称）
 4. 服务器地址填写：`localxxx.alazeprt.top (端口40001)` or 备用IP: `110.42.43.86 (端口19132)`
 5. 点击"完成"，然后选择服务器并点击"加入服务器"
+
+> 💡 如果你遇到连接问题，请确认：
+> 1. 你已正确绑定你的 ID（不带"."前缀）
+> 2. 已登录微软账号
+> 3. 使用正确的账号登录游戏
+> 
+> 如仍无法解决，请联系QQ群内的管理员寻求帮助。
