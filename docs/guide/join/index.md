@@ -1,6 +1,6 @@
 ---
 title: 加入服务器
-description: 屯人服Minecraft服务器的更新记录和版本历史
+description: 屯人服Minecraft服务器加入指南
 ---
 
 # 请选择你的账号类型
