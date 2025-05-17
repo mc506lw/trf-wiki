@@ -70,8 +70,8 @@ onMounted(() => {
       // 启用自动旋转
       skinViewer.value.autoRotate = true;
       
-      // 设置背景色
-      skinViewer.value.background = 0x16d9c7;
+      // 设置背景色 - 使用主题变量中的品牌色
+      skinViewer.value.background = 0x10b3a3; // 使用中青绿色，更柔和
     }
   }).catch(error => {
     console.error('Failed to load skinview3d:', error);
@@ -98,14 +98,17 @@ onMounted(() => {
 
 <style>
 :root {
-  --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%);
-  --role-tag-hover: var(--vp-c-brand-lightest);
+  --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
+  --role-tag-bg: rgba(255, 255, 255, 0.18);
+  --role-tag-hover: var(--vp-c-brand-2);
+  --admin-name-color: var(--vp-c-brand-1);
+  --control-btn-hover: var(--vp-c-brand-2);
 }
 
 @media (max-width: 768px) {
   .admin-viewer {
     padding: 1rem;
-    max-width: 90%;
+    max-width: 95%;
   }
   
   .skin-viewer {
@@ -118,6 +121,15 @@ onMounted(() => {
     height: 36px;
     margin: 0 0.4rem;
   }
+  
+  .admin-info h2 {
+    font-size: 1.2rem;
+  }
+  
+  .role-tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.7rem;
+  }
 }
 .admin-showcase {
   display: flex;
@@ -129,13 +141,19 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(145deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%);
+  background: var(--admin-card-bg);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: var(--vp-shadow-3);
   max-width: 560px;
   width: 100%;
-  border: 1px solid var(--vp-c-brand-lightest);
+  border: 1px solid var(--vp-c-brand-3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-viewer:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--vp-shadow-4);
 }
 
 .admin-controls {
@@ -146,8 +164,14 @@ onMounted(() => {
 }
 
 .skin-viewer {
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skin-viewer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .control-btn {
@@ -168,7 +192,9 @@ onMounted(() => {
 }
 
 .control-btn:hover {
-  background: #0a8c7f;
+  background: var(--control-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--vp-shadow-2);
 }
 
 .admin-info {
@@ -178,8 +204,10 @@ onMounted(() => {
 
 .admin-info h2 {
   margin: 0.2rem 0;
-  color: #0a8c7f;
+  color: var(--admin-name-color);
   font-size: 1.3rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .admin-roles {
@@ -191,19 +219,21 @@ onMounted(() => {
 }
 
 .role-tag {
-  background: rgba(255,255,255,0.15);
+  background: var(--role-tag-bg);
   color: var(--vp-c-text-1);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
   transition: all 0.25s ease;
-  border: 1px solid var(--vp-c-brand-lightest);
+  border: 1px solid var(--vp-c-brand-3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .role-tag:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--vp-shadow-2);
-  background: var(--vp-c-brand-lightest);
+  transform: translateY(-3px);
+  box-shadow: var(--vp-shadow-3);
+  background: var(--role-tag-hover);
+  color: white;
 }
 </style>
