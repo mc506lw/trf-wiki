@@ -9,7 +9,7 @@ export const sidebar = {
 
                 { text: '服务器介绍', link: '/guide/' },
                 { text: '服务器规则', link: '/guide/rules' },
-                { text: '常见问题', link: '/guide/faq' },
+                { text: '常见问题', link: '/guide/faq/' },
                 {
                     text: '加入服务器',
                     collapsed: true,
@@ -26,8 +26,8 @@ export const sidebar = {
             collapsed: false,
             items: [
                 { text: '命令大全', link: '/guide/gameplay/commands' },
-                { text: '玩法1', link: '/guide/gameplay/1' },
-                { text: '玩法2', link: '/guide/gameplay/2' }
+                { text: '点歌', link: '/guide/gameplay/music' },
+                { text: '枪械', link: '/guide/gameplay/weapon' }
             ]
         },
         {

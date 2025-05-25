@@ -1,0 +1,89 @@
+{
+  "weapons": [
+    {
+      "id": "ak47",
+      "name": "AK-47",
+      "type": "突击步枪",
+      "image": "/images/weapons/ak47.png",
+      "stats": {
+        "伤害": 8
+      },
+      "ammo": "762mm",
+      "acquisition": "可在军事基地、警察局或空投中获得，也可通过完成特定任务获取。"
+    }
+  ],
+  "ammo": [
+    {
+      "id": "762mm",
+      "name": "7.62mm 弹药",
+      "image": "/images/ammo/762x39.png",
+      "description": "高伤害弹药，适用于多种突击步枪和机枪。",
+      "compatibleWeapons": ["ak47", "akm", "g3sg1"],
+      "acquisition": "可在军事基地、弹药库、枪店或击败持有相应武器的敌人时获得。"
+    },
+    {
+      "id": "556mm",
+      "name": "5.56mm 弹药",
+      "image": "/images/ammo/556x45.png",
+      "description": "平衡型弹药，提供良好的精准度和适中的伤害。",
+      "compatibleWeapons": ["m4a1", "m249", "famas"],
+      "acquisition": "可在警察局、军事基地、枪店或普通补给箱中获得，是最常见的弹药类型之一。"
+    },
+    {
+      "id": "9mm",
+      "name": "9mm 弹药",
+      "image": "/images/ammo/9mm.png",
+      "description": "大口径手枪弹药，提供极高的单发伤害。",
+      "compatibleWeapons": ["deagle"],
+      "acquisition": "可在警察局、黑市或特殊宝箱中获得，相对稀有。"
+    },
+    {
+      "id": "12g",
+      "name": "12 弹药",
+      "image": "/images/ammo/12g.png",
+      "description": "狙击步枪专用弹药，具有极高的穿透力和伤害。",
+      "compatibleWeapons": ["awp"],
+      "acquisition": "仅在狙击手营地、军事基地高级区域或空投中获得，非常稀有。"
+    },
+    {
+      "id": "357mag",
+      "name": "357 弹药",
+      "image": "/images/ammo/357mag.png",
+      "description": "轻型高速弹药，适用于特定冲锋枪和手枪。",
+      "compatibleWeapons": ["p90", "fiveseven"],
+      "acquisition": "可在警察局、特种部队营地或中型补给箱中获得。"
+    },
+    {
+      "id": "rpg_rocket",
+      "name": "rpg_rocket",
+      "image": "/images/ammo/rpg_rocket.png",
+      "description": "轻型高速弹药，适用于特定冲锋枪和手枪。",
+      "compatibleWeapons": ["p90", "fiveseven"],
+      "acquisition": "可在警察局、特种部队营地或中型补给箱中获得。"
+    },
+    {
+      "id": "emx_b1",
+      "name": "emx_b1 弹药",
+      "image": "/images/ammo/emx_b1.png",
+      "description": "轻型高速弹药，适用于特定冲锋枪和手枪。",
+      "compatibleWeapons": ["p90", "fiveseven"],
+      "acquisition": "可在警察局、特种部队营地或中型补给箱中获得。"
+    },
+    {
+      "id": "emx_b2",
+      "name": "357 弹药",
+      "image": "/images/ammo/emx_b2.png",
+      "description": "轻型高速弹药，适用于特定冲锋枪和手枪。",
+      "compatibleWeapons": ["p90", "fiveseven"],
+      "acquisition": "可在警察局、特种部队营地或中型补给箱中获得。"
+    },
+    {
+      "id": "emx_b6",
+      "name": "357 弹药",
+      "image": "/images/ammo/emx_b6.png",
+      "description": "轻型高速弹药，适用于特定冲锋枪和手枪。",
+      "compatibleWeapons": ["p90", "fiveseven"],
+      "acquisition": "可在警察局、特种部队营地或中型补给箱中获得。"
+    }
+  ]
+}
