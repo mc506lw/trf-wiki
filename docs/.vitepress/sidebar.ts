@@ -27,13 +27,14 @@ export const sidebar = {
             items: [
                 { text: '命令大全', link: '/guide/gameplay/commands' },
                 { text: '点歌', link: '/guide/gameplay/music' },
-                { text: '枪械', link: '/guide/gameplay/weapon' }
+                { text: '枪械', collapsed: true, items: [{ text: '枪械介绍', link: '/guide/gameplay/weapon/weapons' }, { text: '伤害基准', link: '/guide/gameplay/weapon/norm'}] },
             ]
         },
         {
             text: '其他',
             collapsed: false,
             items: [
+                { text: '小游戏服', link: '/guide/other/mgame' },
                 { text: 'QQ交流群', link: '/guide/other/qq' },
                 {
                     text: '更新日志',

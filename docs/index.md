@@ -42,7 +42,7 @@ features:
   <h2>最新公告</h2>
   <div class="announcement-list">
     <div class="announcement-item">
-      <span class="date">2023-12-15</span>
+      <span class="date">2025-05-03</span>
       <h3>✨【重磅消息！屯人服与Alazeprt合并为「屯人服」】✨</h3>
       <p>原「屯人服」与「Alazeprt」今日正式合并！全新「屯人服」将全面升级玩法机制与主城体验...</p>
       <a href="/guide/updates/">阅读更多</a>
