@@ -1,0 +1,319 @@
+# 囤人服计划看板
+
+<script setup>
+import { ref, computed } from 'vue'
+
+const tasks = ref([
+  {
+    id: 1,
+    title: '商店系统优化',
+    status: 'completed',
+    tags: ['经济', '商店'],
+    deadline: '2025-05-24'
+  },
+  {
+    id: 2,
+    title: '更多拓展玩法',
+    status: 'pending',
+    tags: ['玩法'],
+    deadline: '2025-06-07'
+  },
+  {
+    id: 3,
+    title: '枪械强度平衡',
+    status: 'in-progress',
+    tags: ['玩法', '枪械'],
+    deadline: '2025-05-27'
+  }
+])
+
+const filteredTasks = ref('')
+
+const filteredTaskList = computed(() => {
+  if (!filteredTasks.value) return tasks.value
+  return tasks.value.filter(t => 
+    t.title.toLowerCase().includes(filteredTasks.value.toLowerCase()) || 
+    t.tags.some(tag => tag.toLowerCase().includes(filteredTasks.value.toLowerCase()))
+  )
+})
+
+const getStatusColor = (status) => {
+  switch(status) {
+    case 'pending': return '#F59E0B'
+    case 'planned': return '#8B5CF6'
+    case 'in-progress': return '#3B82F6'
+    case 'completed': return '#10B981'
+    default: return '#9CA3AF'
+  }
+}
+</script>
+
+  <div class="board-container">
+    <!-- 搜索与筛选 -->
+    <div class="controls">
+      <input 
+        v-model="filteredTasks"
+        placeholder="搜索任务..."
+        class="search-input"
+      >
+    </div>
+    <!-- 看板布局 -->
+    <div class="board-columns">
+      <!-- 列定义 -->
+      <div 
+        v-for="(column, index) in [
+          {status: 'pending', title: '未计划'},
+          {status: 'planned', title: '计划中'},
+          {status: 'in-progress', title: '进行中'},
+          {status: 'completed', title: '已完成'}
+        ]" 
+        :key="index"
+        class="board-column"
+      >
+        <h3 class="column-title">
+          {{ column.title }} 
+          <span class="task-count">
+            {{ filteredTaskList.filter(t => t.status === column.status).length }}
+          </span>
+        </h3>
+        <!-- 任务卡片 -->
+        <div 
+          v-for="task in filteredTaskList.filter(t => t.status === column.status)" 
+          :key="task.id"
+          class="task-card"
+          :style="{ backgroundColor: getStatusColor(task.status) + '20' }"
+        >
+          <div class="task-header">
+            <span class="task-tags">
+              {{ task.tags.join(' • ') }}
+            </span>
+          </div>
+          <h4 class="task-title">{{ task.title }}</h4>
+          <div class="task-footer">
+            <span class="deadline">📅 {{ task.deadline }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<style scoped>
+.board-container {
+  padding: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #e4e4e4;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #3B82F6, #6366F1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: scale(1.05);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1.2rem;
+  top: 0.6rem;
+  pointer-events: none;
+  transition: fill 0.3s ease;
+}
+
+.task-icon {
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover .task-icon {
+  transform: rotate(15deg);
+}
+
+.engagement-icon {
+  margin-right: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+.likes-count {
+  font-size: 0.8rem;
+}
+
+.board-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.board-column {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.column-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.task-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.task-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-card {
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 0.375rem;
+}
+
+.task-header {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.task-title {
+  font-size: 1rem;
+  margin-bottom: 0.375rem;
+}
+
+.task-footer {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.task-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover .task-icon {
+  transform: rotate(15deg);
+}
+
+.task-tags {
+  font-size: 0.7rem;
+  color: #6b7280;
+  background: rgba(107, 114, 128, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+
+.task-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.deadline {
+  color: #6b7280;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.engagement {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.likes, .comments {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.likes:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.comments:hover {
+  background: rgba(147, 197, 253, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .board-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    margin-bottom: 0.5rem;
+  }
+}
+</style>
