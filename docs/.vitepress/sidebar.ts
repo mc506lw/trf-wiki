@@ -28,6 +28,7 @@ export const sidebar = {
                 { text: '命令大全', link: '/guide/gameplay/commands' },
                 { text: '点歌', link: '/guide/gameplay/music' },
                 { text: '枪械', collapsed: true, items: [{ text: '枪械介绍', link: '/guide/gameplay/weapon/weapons' }, { text: '伤害基准', link: '/guide/gameplay/weapon/norm'}] },
+                { text: '称号系统', link: '/guide/gameplay/title' },
             ]
         },
         {
