@@ -43,7 +43,7 @@ export const sidebar = {
                     collapsed: true,
                     items: [
                         { text: '更新历史', link: '/guide/updates/' },
-                        { text: '未来计划', link: '/guide/other/scheme' }
+                        { text: '未来计划', link: '/guide/updates/scheme' }
                     ]
                 },
                 { text: '管理团队', link: '/guide/other/admin' },

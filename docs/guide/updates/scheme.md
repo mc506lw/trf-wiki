@@ -24,6 +24,13 @@ const tasks = ref([
     status: 'in-progress',
     tags: ['玩法', '枪械'],
     deadline: '2025-05-27'
+  },
+  {
+    id: 3,
+    title: '任务系统',
+    status: 'planned',
+    tags: ['玩法'],
+    deadline: '2025-06-08'
   }
 ])
 
