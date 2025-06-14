@@ -145,7 +145,7 @@ const commands = ref([
     name: '/claim',
     categories: ['领地'],
     description: '创建一个领地',
-    usage: '/claim'
+    usage: '/claim [半径]'
   },
   {
     name: '/unclaim',
@@ -162,8 +162,26 @@ const commands = ref([
   {
     name: '/untrust',
     categories: ['领地'],
-    description: '撤销其他玩家在你的领地内的建造权限',
+    description: '撤销其他玩家在你的领地内的所有已给予的权限',
     usage: '/untrust <玩家名>'
+  },
+  {
+    name: '/containertrust',
+    categories: ['领地'],
+    description: '允许其他玩家使用你领地内的容器 (包括但不限于箱子, 漏斗)',
+    usage: '/containertrust <玩家名>'
+  },
+  {
+    name: '/accesstrust',
+    categories: ['领地'],
+    description: '允许其他玩家使用你领地的可交互方块 (如门, 按钮, **不**包括容器)',
+    usage: '/accesstrust <玩家名>'
+  },
+  {
+    name: '/hctp',
+    categories: ['领地'],
+    description: '若不填ID, 则代表查看你拥有的所有领地的ID及其位置, 若填ID, 则将你传送到指定ID的领地',
+    usage: '/hctp [领地数字ID]'
   }
 ])
 
