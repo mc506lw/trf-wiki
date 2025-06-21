@@ -26,10 +26,16 @@ export const sidebar = {
             collapsed: false,
             items: [
                 { text: '命令大全', link: '/guide/gameplay/commands' },
-                { text: '点歌', link: '/guide/gameplay/music' },
+                { text: '点歌[MOD+]', link: '/guide/gameplay/music' },
+                { text: '超大视距[MOD+]', link: '/guide/gameplay/dhs' },
+                { text: '箱子商店', link: '/guide/gameplay/quickshop' },
+                { text: '额外附魔', link: '/guide/gameplay/ecoenchants' },
                 { text: '图片', link: '/guide/gameplay/image' },
                 { text: '枪械', collapsed: true, items: [{ text: '枪械介绍', link: '/guide/gameplay/weapon/weapons' }, { text: '伤害基准', link: '/guide/gameplay/weapon/norm'}] },
                 { text: '称号系统', link: '/guide/gameplay/title' },
+                { text: '假人', link: '/guide/gameplay/fakeplayer' },
+                { text: '路径点', link: '/guide/gameplay/waypoint' },
+                { text: '垃圾桶', link: '/guide/gameplay/trashbin' },
             ]
         },
         {

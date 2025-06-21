@@ -5,6 +5,10 @@ description: 屯人服枪械系统详细介绍
 
 # 枪械系统
 
+::: warning 注意
+枪械内容平衡性有待调整，很长一段时间内可能不会上线！
+:::
+
 <script setup>
 import { ref, onMounted } from 'vue'
 

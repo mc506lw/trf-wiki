@@ -7,7 +7,7 @@ const tasks = ref([
   {
     id: 1,
     title: '商店系统优化',
-    status: 'completed',
+    status: 'in-progress',
     tags: ['经济', '商店'],
     deadline: '2025-05-24'
   },
@@ -21,7 +21,7 @@ const tasks = ref([
   {
     id: 3,
     title: '枪械强度平衡',
-    status: 'in-progress',
+    status: 'pending',
     tags: ['玩法', '枪械'],
     deadline: '2025-05-27'
   },
@@ -70,8 +70,8 @@ const getStatusColor = (status) => {
       <div 
         v-for="(column, index) in [
           {status: 'pending', title: '未计划'},
-          {status: 'planned', title: '计划中'},
-          {status: 'in-progress', title: '进行中'},
+          {status: 'planned', title: '进行中'},
+          {status: 'in-progress', title: '持续中'},
           {status: 'completed', title: '已完成'}
         ]" 
         :key="index"

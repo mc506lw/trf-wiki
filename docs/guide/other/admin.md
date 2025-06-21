@@ -70,8 +70,9 @@ onMounted(() => {
       // 启用自动旋转
       skinViewer.value.autoRotate = true;
       
-      // 设置背景色 - 使用主题变量中的品牌色
-      skinViewer.value.background = 0x10b3a3; // 使用中青绿色，更柔和
+      // 设置背景色
+      skinViewer.value.background = 0xfff5e6; // 十六进制米白色
+// 使用中青绿色，更柔和
     }
   }).catch(error => {
     console.error('Failed to load skinview3d:', error);
@@ -98,12 +99,26 @@ onMounted(() => {
 
 <style>
 :root {
-  --admin-card-bg: linear-gradient(145deg, var(--vp-c-brand-1) 0%, var(--vp-c-brand-3) 100%);
-  --role-tag-bg: rgba(255, 255, 255, 0.18);
-  --role-tag-hover: var(--vp-c-brand-2);
-  --admin-name-color: var(--vp-c-brand-1);
-  --control-btn-hover: var(--vp-c-brand-2);
+  --admin-card-bg: color-mix(
+    in srgb, 
+    var(--vp-c-brand-1) 5%, 
+    rgba(255, 255, 255, 0.9)
+  );
+
+  --role-tag-bg: rgba(255, 255, 255, 0.18); /* 保持原有半透明效果 */
+  --role-tag-hover: color-mix(
+    in srgb, 
+    var(--vp-c-brand-1) 15%, 
+    rgba(255, 255, 255, 0.9)
+  ); /* 悬停时增加品牌色浓度 */
+  --admin-name-color: var(--vp-c-brand-1); /* 保持清晰可读性 */
+  --control-btn-hover: color-mix(
+    in srgb, 
+    var(--vp-c-brand-1) 10%, 
+    rgba(255, 255, 255, 0.9)
+  ); /* 按钮悬停中等浓度 */
 }
+
 
 @media (max-width: 768px) {
   .admin-viewer {
