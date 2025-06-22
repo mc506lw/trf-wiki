@@ -55,6 +55,22 @@ export const sidebar = {
                 { text: '管理团队', link: '/guide/other/admin' },
                 { text: '用户协议及隐私政策', link: '/guide/other/terms' }
             ]
+        },
+        {
+            text: '管理团队相关',
+            collapsed: false,
+            items: [
+                {
+                    text: '管理员守则 (部分)',
+                    collapsed: true,
+                    items: [
+                        { text: '第一章 管理规则', link: '/guide/admin/rule' },
+                        { text: '第三章 成员职责', link: '/guide/admin/duty' },
+                        { text: '第六章 培训考核', link: '/guide/admin/training'}
+                    ]
+                },
+                { text: '招聘信息', link: '/guide/admin/recruit' }
+            ]
         }
     ]
 }
