@@ -38,7 +38,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "mc506lw-trf-wiki-97"
-          entrypoint: ""
+          entrypoint: "https://deno.land/std@$STD_VERSION/http/file_server.ts"
           root: "docs/.vitepress/dist"
           
           
