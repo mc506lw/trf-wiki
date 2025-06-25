@@ -18,7 +18,8 @@ export const sidebar = {
                         { text: 'JAVA玩家加入', link: '/guide/join/java' },
                         { text: '基岩版玩家加入', link: '/guide/join/bedrock' }
                     ]
-                }
+                },
+                { text: '绑定账号', link: '/guide/bind/' }
             ]
         },
         {
