@@ -158,6 +158,58 @@
 .ban-info {
   margin-top: -1.7rem;
 }
+
+/* 黑暗模式适配部分 */
+.dark .fengshen-container {
+  background: #121212;
+}
+
+.dark .ban-card {
+  background: rgba(30, 30, 30, 0.95);
+  border-color: #ffd700;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.dark .ban-card::before {
+  opacity: 0.2;
+}
+
+.dark .ban-card:hover::before {
+  opacity: 0.4;
+}
+
+.dark .avatar {
+  background: linear-gradient(145deg, #ff6b6b, #ffd93d);
+  border-color: #333;
+}
+
+.dark .ban-footer {
+  border-top-color: #ff6b6b;
+}
+
+.dark .penalty-1 { background: linear-gradient(45deg, #ffd93d, #ff9d00); }
+.dark .penalty-2 { background: linear-gradient(45deg, #ff6b6b, #ff0080); }
+.dark .penalty-3 { background: linear-gradient(45deg, #6c5ce7, #00ff87); }
+.dark .penalty-4 { 
+  background: linear-gradient(45deg, #96a5a9, #d63031);
+  animation: rainbow 2s infinite;
+}
+
+.dark .ban-card::after {
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+}
+
+.dark .penalty-indicator::after {
+  background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.2) 50%, transparent 75%);
+}
+
+/* 需要补充的全局文字颜色 */
+.dark .ban-header,
+.dark .ban-content,
+.dark .ban-footer {
+  color: #e0e0e0;
+}
 </style>
 
 
