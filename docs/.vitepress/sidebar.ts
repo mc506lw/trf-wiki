@@ -54,6 +54,7 @@ export const sidebar = {
                     ]
                 },
                 { text: '管理团队', link: '/guide/other/admin' },
+                { text: '封神榜', link: '/guide/other/banlist' },
                 { text: '用户协议及隐私政策', link: '/guide/other/terms' }
             ]
         },
