@@ -1,3 +1,6 @@
+---
+order: 10
+---
 # 管理团队
 
 <script setup>

@@ -32,3 +32,6 @@ package-lock.json
 
 # Trae
 ,trae
+
+# elog
+.elog.env

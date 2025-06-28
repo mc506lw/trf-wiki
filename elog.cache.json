@@ -1,0 +1,37 @@
+{
+  "docs": [
+    {
+      "id": 225667357,
+      "doc_id": "nch0igzqhcyfyvai",
+      "updated": 1751079917000,
+      "properties": {
+        "title": "教程1",
+        "urlname": "nch0igzqhcyfyvai",
+        "date": "2025-06-27 22:26:08",
+        "updated": "2025-06-28 11:05:17",
+        "description": "123"
+      },
+      "catalog": [],
+      "realName": "教程1",
+      "relativePath": "\\教程1.md",
+      "docPath": "./docs/屯人服文档/萌新教程"
+    }
+  ],
+  "catalog": [
+    {
+      "type": "DOC",
+      "title": "教程1",
+      "uuid": "nXaBgLfNcMcsjETv",
+      "url": "nch0igzqhcyfyvai",
+      "prev_uuid": "",
+      "sibling_uuid": "",
+      "child_uuid": "",
+      "parent_uuid": "",
+      "doc_id": 225667357,
+      "level": 0,
+      "id": 225667357,
+      "open_window": 1,
+      "visible": 1
+    }
+  ]
+}

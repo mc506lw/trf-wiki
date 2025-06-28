@@ -1,13 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { themeConfig } from './theme/index'
 // 导入侧边栏配置
-import { sidebar } from './sidebar'
-
 // 导入时间线插件
 import timeline from 'vitepress-markdown-timeline'
+import { withSidebar } from 'vitepress-sidebar';
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const vitePressOptions = {
   // 站点语言设置
   lang: 'zh-CN',
 
@@ -35,11 +34,8 @@ export default defineConfig({
     // 导航栏配置
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' }
+      { text: '指南', link: '/屯人服文档/从这里开始' }
     ],
-
-    // 使用导入的侧边栏配置
-    sidebar,
 
     // 社交链接
     socialLinks: [
@@ -154,4 +150,17 @@ export default defineConfig({
       md.use(timeline)
     }
   },
-})
+}
+
+
+const vitePressSidebarOptions = {
+  // VitePress Sidebar's options here...
+  documentRootPath: '/docs',
+  collapsed: false,
+  capitalizeFirst: true,
+  sortMenusByFrontmatterOrder: true,
+  frontmatterOrderDefaultValue: 1000,
+  useFolderLinkFromIndexFile: true
+};
+
+export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));

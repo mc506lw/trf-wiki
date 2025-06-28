@@ -1,8 +1,7 @@
 ---
-title: 服务器更新日志
-description: 屯人服Minecraft服务器的更新记录和版本历史
-outline: deep
+order: 7
 ---
+
 
 # 服务器更新日志
 

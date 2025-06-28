@@ -4,9 +4,6 @@ layout: home
 
 hero:
   name: "屯人服 Wiki"
-
-
-
   text: "Minecraft 生存服务器知识库"
   tagline: "探索、建造、生存、交流 —— 尽在屯人服"
   image:
@@ -15,24 +12,24 @@ hero:
   actions:
     - theme: brand
       text: "开始探索"
-      link: /guide/
+      link: /屯人服文档/从这里开始
     - theme: alt
       text: "加入我们"
-      link: /guide/join/
+      link: /屯人服文档/从这里开始/加入服务器
 
 features:
   - icon: 🏠
     title: "服务器介绍"
     details: "屯人服是一个注重玩家体验的Minecraft生存服务器，提供稳定、公平的游戏环境和丰富的社区活动。"
-    link: /guide/
+    link: /屯人服文档/从这里开始
   - icon: 🧭
     title: "新手指南"
     details: "从连接服务器到了解基本规则，这里有你需要的所有入门知识，帮助你快速融入屯人服的世界。"
-    link: /guide/join/
+    link: /屯人服文档/萌新教程
   - icon: 📚
     title: "玩法攻略"
     details: "探索服务器特色玩法、经济系统、建筑技巧和红石机械等进阶内容，提升你的游戏体验。"
-    link: /guide/gameplay/commands/
+    link: /屯人服文档/玩法
 ---
 
 
@@ -43,9 +40,9 @@ features:
   <div class="announcement-list">
     <div class="announcement-item">
       <span class="date">2025-05-03</span>
-      <h3>✨【重磅消息！屯人服与Alazeprt合并为「屯人服」】✨</h3>
-      <p>原「屯人服」与「Alazeprt」今日正式合并！全新「屯人服」将全面升级玩法机制与主城体验...</p>
-      <a href="/guide/updates/">阅读更多</a>
+      <h3>✨暑假大放送✨</h3>
+      <p>筹备中，敬请期待！</p>
+      <a href="/屯人服文档/更新历史">阅读更多</a>
     </div>
   </div>
 </div>
