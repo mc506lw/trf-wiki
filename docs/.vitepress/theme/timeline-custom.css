@@ -120,3 +120,7 @@
 .timeline-item:last-child:hover .timeline-dot {
     box-shadow: 0 0 12px rgba(255, 199, 0, 0.6);
 }
+
+.timeline-dot {
+    color: #000;
+}

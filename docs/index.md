@@ -39,10 +39,10 @@ features:
   <h2>最新公告</h2>
   <div class="announcement-list">
     <div class="announcement-item">
-      <span class="date">2025-05-03</span>
-      <h3>✨暑假大放送✨</h3>
-      <p>筹备中，敬请期待！</p>
-      <a href="/屯人服文档/更新历史">阅读更多</a>
+      <span class="date">2025-07-11</span>
+      <h3>✨暑假全新建筑活动开始啦！✨</h3>
+      <p>各位建筑党不容错过！</p>
+      <a href="/屯人服文档/活动/暑假建筑活动">阅读更多</a>
     </div>
   </div>
 </div>
