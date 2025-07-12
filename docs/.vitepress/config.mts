@@ -71,8 +71,8 @@ const vitePressOptions = {
 
     // 页脚配置
     footer: {
-      message: '基于 GPL-3.0 license 许可发布',
-      copyright: 'Copyright © 屯人服'
+      message: '<a href="https://icp.gov.moe/?keyword=20255066" target="_blank">萌ICP备20255066号</a>',
+      copyright: '屯人服 我的世界公益生存服'
     },
 
     // 文档更新时间显示
