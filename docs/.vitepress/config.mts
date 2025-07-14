@@ -71,7 +71,7 @@ const vitePressOptions = {
 
     // 页脚配置
     footer: {
-      message: '<a href="https://icp.gov.moe/?keyword=20255066" target="_blank">萌ICP备20255066号</a> <a href="https://mcicp.com" title="MCICP备2025000014号" target="_blank">MCICP备2025000014号</a>',
+      message: '<a href="https://icp.gov.moe/?keyword=20255066" target="_blank">萌ICP备20255066号</a> <a href="https://mcicp.com" title="MCICP备20250014号" target="_blank">MCICP备20250014号</a>',
       copyright: '屯人服 我的世界公益生存服'
     },
 
