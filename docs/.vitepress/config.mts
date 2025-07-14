@@ -18,7 +18,7 @@ const vitePressOptions = {
 
   // 站点头部配置
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'theme-color', content: '#16d9c7' }], // 更新为青绿色
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
@@ -71,7 +71,7 @@ const vitePressOptions = {
 
     // 页脚配置
     footer: {
-      message: '<a href="https://icp.gov.moe/?keyword=20255066" target="_blank">萌ICP备20255066号</a>',
+      message: '<a href="https://icp.gov.moe/?keyword=20255066" target="_blank">萌ICP备20255066号</a> <a href="https://mcicp.com" title="MCICP备2025000014号" target="_blank">MCICP备2025000014号</a>',
       copyright: '屯人服 我的世界公益生存服'
     },
 
@@ -117,7 +117,7 @@ const vitePressOptions = {
 
   // 站点地图配置
   sitemap: {
-    hostname: 'https://example.com'
+    hostname: 'https://wiki.506521.xyz'
   },
 
   // Markdown 配置

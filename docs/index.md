@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "屯人服 Wiki"
-  text: "Minecraft 生存服务器知识库"
+  text: "MC 生存服务器知识库  100%公益"
   tagline: "探索、建造、生存、交流 —— 尽在屯人服"
   image:
     src: "/logo.svg"
@@ -28,7 +28,7 @@ features:
     link: /屯人服文档/萌新教程
   - icon: 📚
     title: "玩法攻略"
-    details: "探索服务器特色玩法、经济系统、建筑技巧和红石机械等进阶内容，提升你的游戏体验。"
+    details: "探索服务器特色玩法、经济系统等进阶内容，提升你的游戏体验。"
     link: /屯人服文档/玩法
 ---
 

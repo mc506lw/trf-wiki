@@ -18,7 +18,7 @@ outline: deep
 
 ### 步骤如下：
 
-1. 加入[官方QQ群](https://qm.qq.com/q/6rVnCwgEmc)
+1. 加入[官方QQ群](https://qm.qq.com/q/ZtjcU4SAso)
 2. 进入群后，在群中发送以下指令来绑定你的 Minecraft ID：
    ```
    /绑定 你的MinecraftID

@@ -46,15 +46,9 @@ const commands = ref([
     usage: '/delhome <家的名称>'
   },
   {
-    name: '/warp',
-    categories: ['传送'],
-    description: '传送到服务器设置的公共地标',
-    usage: '/warp <地标名称>'
-  },
-  {
     name: '/spawn',
     categories: ['传送'],
-    description: '传送到服务器出生点',
+    description: '传送到服务器主城',
     usage: '/spawn'
   },
   {
@@ -76,18 +70,6 @@ const commands = ref([
     usage: '/r <消息>'
   },
   {
-    name: '/ignore',
-    categories: ['社交'],
-    description: '屏蔽指定玩家的消息',
-    usage: '/ignore <玩家名>'
-  },
-  {
-    name: '/balance',
-    categories: ['经济'],
-    description: '查看你的账户余额',
-    usage: '/balance [玩家名]'
-  },
-  {
     name: '/pay',
     categories: ['经济'],
     description: '向其他玩家转账',
@@ -98,36 +80,6 @@ const commands = ref([
     categories: ['经济', '物品'],
     description: '打开服务器商店界面',
     usage: '/shop'
-  },
-  {
-    name: '/sell',
-    categories: ['经济'],
-    description: '出售手中的物品',
-    usage: '/sell <数量/hand/all>'
-  },
-  {
-    name: '/kit',
-    categories: ['物品'],
-    description: '领取预设的物品包',
-    usage: '/kit <包名>'
-  },
-  {
-    name: '/hat',
-    categories: ['物品'],
-    description: '将手中的物品戴在头上',
-    usage: '/hat'
-  },
-  {
-    name: '/afk',
-    categories: ['其他'],
-    description: '标记自己为离开状态',
-    usage: '/afk [原因]'
-  },
-  {
-    name: '/rules',
-    categories: ['其他'],
-    description: '查看服务器规则',
-    usage: '/rules'
   },
   {
     name: '/help',
@@ -174,7 +126,7 @@ const commands = ref([
   {
     name: '/accesstrust',
     categories: ['领地'],
-    description: '允许其他玩家使用你领地的可交互方块 (如门, 按钮, **不**包括容器)',
+    description: '允许其他玩家使用你领地的可交互方块 (如门, 按钮, 不包括容器)',
     usage: '/accesstrust <玩家名>'
   },
   {
