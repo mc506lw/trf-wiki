@@ -69,6 +69,8 @@ onMounted(() => {
   function resizeCanvas() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
+    // 窗口大小改变时重新创建动画以适配新尺寸
+    createFluidAnimation()
   }
 
   // 创建流体动画
@@ -146,18 +148,26 @@ onMounted(() => {
     observer.observe(document.documentElement, { attributes: true });
   }
 
-  window.addEventListener('resize', resizeCanvas)
+  // 使用防抖函数优化resize事件处理
+  let resizeTimeout;
+  function debouncedResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resizeCanvas, 100);
+  }
+
+  window.addEventListener('resize', debouncedResize)
   initializeAndWatchTheme()
 
   // 清理函数
   onUnmounted(() => {
-    window.removeEventListener('resize', resizeCanvas)
+    window.removeEventListener('resize', debouncedResize)
     if (animationFrameId) {
       cancelAnimationFrame(animationFrameId)
     }
     if (observer) {
       observer.disconnect()
     }
+    clearTimeout(resizeTimeout);
   })
 })
 </script>
@@ -374,4 +384,3 @@ onMounted(() => {
   }
 }
 </style>
-
