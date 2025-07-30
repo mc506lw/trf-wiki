@@ -21,16 +21,6 @@ const adminList = [
     name: 'rainuil',
     id: 'rainuil',
     roles: ['管理']
-  },
-  {
-    name: 'レミリア',
-    id: 'remlia_',
-    roles: ['插件开发', '配置文件编辑']
-  },
-  {
-    name: 'Starry-cbz',
-    id: 'Starry-cbz',
-    roles: ['文档撰写', '配置文件编辑']
   }
 ];
 
@@ -85,11 +75,18 @@ onMounted(() => {
 
 <div class="admin-showcase">
   <div class="admin-viewer">
-    <div class="admin-controls">
-      <button @click="prevAdmin" class="control-btn">←</button>
-      <canvas ref="skinViewerContainer" class="skin-viewer"></canvas>
-      <button @click="nextAdmin" class="control-btn">→</button>
-    </div>
+    <ClientOnly>
+      <div class="admin-controls">
+        <button @click="prevAdmin" class="control-btn">←</button>
+        <canvas ref="skinViewerContainer" class="skin-viewer"></canvas>
+        <button @click="nextAdmin" class="control-btn">→</button>
+      </div>
+      <template #fallback>
+        <div class="loading-placeholder">
+          <p>加载中...</p>
+        </div>
+      </template>
+    </ClientOnly>
     <div class="admin-info" v-if="adminList[currentAdmin]">
       <h2>{{ adminList[currentAdmin].name }}</h2>
       <p v-if="adminList[currentAdmin].id">ID: {{ adminList[currentAdmin].id }}</p>
@@ -296,5 +293,17 @@ onMounted(() => {
   --vp-button-brand-bg-dark: var(--vp-c-brand-3); /* 假设的黑暗模式按钮背景 */
   --vp-button-brand-text-dark: white; /* 假设的黑暗模式按钮文字颜色 */
   --vp-button-brand-border-dark: var(--vp-c-brand-2); /* 假设的黑暗模式按钮边框颜色 */
+}
+
+/* 添加加载状态样式 */
+.loading-placeholder {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--admin-card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-brand-3);
 }
 </style>
